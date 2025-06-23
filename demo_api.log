@@ -1,0 +1,277 @@
+2025-06-23T12:57:49.888+05:30  INFO 8496 --- [payment-service] [main] [                                                 ] com.in.PaymentApplication                : Starting PaymentApplication using Java 17.0.8.1 with PID 8496 (C:\Users\bsarala\Documents\Practice\Git_SourceCode\payment-service\target\classes started by bsarala in C:\Users\bsarala\Documents\Practice\Git_SourceCode\payment-service)
+2025-06-23T12:57:49.917+05:30  INFO 8496 --- [payment-service] [main] [                                                 ] com.in.PaymentApplication                : No active profile set, falling back to 1 default profile: "default"
+2025-06-23T12:57:52.271+05:30  INFO 8496 --- [payment-service] [main] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
+2025-06-23T12:57:52.295+05:30  INFO 8496 --- [payment-service] [main] [                                                 ] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-23T12:57:52.296+05:30  INFO 8496 --- [payment-service] [main] [                                                 ] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-23T12:57:52.447+05:30  INFO 8496 --- [payment-service] [main] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-23T12:57:52.448+05:30  INFO 8496 --- [payment-service] [main] [                                                 ] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2436 ms
+2025-06-23T12:57:54.221+05:30  INFO 8496 --- [payment-service] [main] [                                                 ] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoints beneath base path '/actuator'
+2025-06-23T12:57:54.386+05:30  INFO 8496 --- [payment-service] [main] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8083 (http) with context path '/'
+2025-06-23T12:57:54.783+05:30  INFO 8496 --- [payment-service] [main] [                                                 ] com.in.PaymentApplication                : Started PaymentApplication in 5.92 seconds (process running for 7.432)
+2025-06-23T12:57:55.187+05:30  INFO 8496 --- [payment-service] [RMI TCP Connection(3)-127.0.0.1] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-23T12:57:55.188+05:30  INFO 8496 --- [payment-service] [RMI TCP Connection(3)-127.0.0.1] [                                                 ] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-23T12:57:55.190+05:30  INFO 8496 --- [payment-service] [RMI TCP Connection(3)-127.0.0.1] [                                                 ] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-06-23T12:59:10.064+05:30  WARN 8496 --- [payment-service] [org.springframework.jms.JmsListenerEndpointContainer#0-1] [68590245233b44e8e4cf7d7038c2843d-7e416fed01189969] o.s.j.l.DefaultMessageListenerContainer  : Execution of JMS message listener failed, and no ErrorHandler has been set.
+
+org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method could not be invoked with incoming message
+Endpoint handler details:
+Method [public void com.in.controller.OrderListener.receiveOrder(com.in.model.Order)]
+Bean [com.in.controller.OrderListener@f0e17dd]
+
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:114) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:819) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:776) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:754) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:333) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:270) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1420) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287) ~[spring-jms-6.2.7.jar:6.2.7]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: org.springframework.messaging.converter.MessageConversionException: Cannot convert from [java.lang.String] to [com.in.model.Order] for LazyResolutionMessage [payload=laptop]
+	at org.springframework.messaging.handler.annotation.support.PayloadMethodArgumentResolver.resolveArgument(PayloadMethodArgumentResolver.java:151) ~[spring-messaging-6.2.7.jar:6.2.7]
+	at org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:118) ~[spring-messaging-6.2.7.jar:6.2.7]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:147) ~[spring-messaging-6.2.7.jar:6.2.7]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:115) ~[spring-messaging-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110) ~[spring-jms-6.2.7.jar:6.2.7]
+	... 10 common frames omitted
+
+2025-06-23T12:59:11.067+05:30  WARN 8496 --- [payment-service] [org.springframework.jms.JmsListenerEndpointContainer#0-1] [68590245233b44e8e4cf7d7038c2843d-2483d2de8e22763f] o.s.j.l.DefaultMessageListenerContainer  : Execution of JMS message listener failed, and no ErrorHandler has been set.
+
+org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method could not be invoked with incoming message
+Endpoint handler details:
+Method [public void com.in.controller.OrderListener.receiveOrder(com.in.model.Order)]
+Bean [com.in.controller.OrderListener@f0e17dd]
+
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:114) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:819) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:776) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:754) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:333) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:270) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1420) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287) ~[spring-jms-6.2.7.jar:6.2.7]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: org.springframework.messaging.converter.MessageConversionException: Cannot convert from [java.lang.String] to [com.in.model.Order] for LazyResolutionMessage [payload=laptop]
+	at org.springframework.messaging.handler.annotation.support.PayloadMethodArgumentResolver.resolveArgument(PayloadMethodArgumentResolver.java:151) ~[spring-messaging-6.2.7.jar:6.2.7]
+	at org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:118) ~[spring-messaging-6.2.7.jar:6.2.7]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:147) ~[spring-messaging-6.2.7.jar:6.2.7]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:115) ~[spring-messaging-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110) ~[spring-jms-6.2.7.jar:6.2.7]
+	... 10 common frames omitted
+
+2025-06-23T12:59:11.182+05:30  WARN 8496 --- [payment-service] [AsyncReporter{ZipkinHttpClientSender{http://localhost:9411/api/v2/spans}}] [                                                 ] z.r.i.AsyncReporter$BoundedAsyncReporter : Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2025-06-23T12:59:11.183+05:30  WARN 8496 --- [payment-service] [AsyncReporter{ZipkinHttpClientSender{http://localhost:9411/api/v2/spans}}] [                                                 ] z.r.i.AsyncReporter$BoundedAsyncReporter : Dropped 2 spans due to ConnectException()
+
+java.net.ConnectException: null
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:573) ~[java.net.http:na]
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:123) ~[java.net.http:na]
+	at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.ZipkinHttpClientSender.postSpans(ZipkinHttpClientSender.java:60) ~[spring-boot-actuator-autoconfigure-3.5.0.jar:3.5.0]
+	at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.HttpSender.postSpans(HttpSender.java:69) ~[spring-boot-actuator-autoconfigure-3.5.0.jar:3.5.0]
+	at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.HttpSender.postSpans(HttpSender.java:41) ~[spring-boot-actuator-autoconfigure-3.5.0.jar:3.5.0]
+	at zipkin2.reporter.BaseHttpSender.send(BaseHttpSender.java:123) ~[zipkin-reporter-3.5.0.jar:na]
+	at zipkin2.reporter.internal.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:266) ~[zipkin-reporter-3.5.0.jar:na]
+	at zipkin2.reporter.internal.AsyncReporter$Flusher.run(AsyncReporter.java:352) ~[zipkin-reporter-3.5.0.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: java.net.ConnectException: null
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1055) ~[java.net.http:na]
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:198) ~[java.net.http:na]
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:230) ~[java.net.http:na]
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:206) ~[java.net.http:na]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	... 1 common frames omitted
+Caused by: java.nio.channels.ClosedChannelException: null
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:195) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:760) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:848) ~[na:na]
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$0(PlainHttpConnection.java:183) ~[java.net.http:na]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569) ~[na:na]
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:185) ~[java.net.http:na]
+	... 9 common frames omitted
+
+2025-06-23T12:59:12.072+05:30  WARN 8496 --- [payment-service] [org.springframework.jms.JmsListenerEndpointContainer#0-1] [68590245233b44e8e4cf7d7038c2843d-db8c5d7d00902725] o.s.j.l.DefaultMessageListenerContainer  : Execution of JMS message listener failed, and no ErrorHandler has been set.
+
+org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method could not be invoked with incoming message
+Endpoint handler details:
+Method [public void com.in.controller.OrderListener.receiveOrder(com.in.model.Order)]
+Bean [com.in.controller.OrderListener@f0e17dd]
+
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:114) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:819) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:776) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:754) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:333) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:270) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1420) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287) ~[spring-jms-6.2.7.jar:6.2.7]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: org.springframework.messaging.converter.MessageConversionException: Cannot convert from [java.lang.String] to [com.in.model.Order] for LazyResolutionMessage [payload=laptop]
+	at org.springframework.messaging.handler.annotation.support.PayloadMethodArgumentResolver.resolveArgument(PayloadMethodArgumentResolver.java:151) ~[spring-messaging-6.2.7.jar:6.2.7]
+	at org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:118) ~[spring-messaging-6.2.7.jar:6.2.7]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:147) ~[spring-messaging-6.2.7.jar:6.2.7]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:115) ~[spring-messaging-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110) ~[spring-jms-6.2.7.jar:6.2.7]
+	... 10 common frames omitted
+
+2025-06-23T12:59:13.076+05:30  WARN 8496 --- [payment-service] [org.springframework.jms.JmsListenerEndpointContainer#0-1] [68590245233b44e8e4cf7d7038c2843d-0f4368f2f7648e53] o.s.j.l.DefaultMessageListenerContainer  : Execution of JMS message listener failed, and no ErrorHandler has been set.
+
+org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method could not be invoked with incoming message
+Endpoint handler details:
+Method [public void com.in.controller.OrderListener.receiveOrder(com.in.model.Order)]
+Bean [com.in.controller.OrderListener@f0e17dd]
+
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:114) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:819) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:776) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:754) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:333) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:270) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1420) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287) ~[spring-jms-6.2.7.jar:6.2.7]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: org.springframework.messaging.converter.MessageConversionException: Cannot convert from [java.lang.String] to [com.in.model.Order] for LazyResolutionMessage [payload=laptop]
+	at org.springframework.messaging.handler.annotation.support.PayloadMethodArgumentResolver.resolveArgument(PayloadMethodArgumentResolver.java:151) ~[spring-messaging-6.2.7.jar:6.2.7]
+	at org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:118) ~[spring-messaging-6.2.7.jar:6.2.7]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:147) ~[spring-messaging-6.2.7.jar:6.2.7]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:115) ~[spring-messaging-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110) ~[spring-jms-6.2.7.jar:6.2.7]
+	... 10 common frames omitted
+
+2025-06-23T12:59:14.089+05:30  WARN 8496 --- [payment-service] [org.springframework.jms.JmsListenerEndpointContainer#0-1] [68590245233b44e8e4cf7d7038c2843d-29215f3b8cc2236d] o.s.j.l.DefaultMessageListenerContainer  : Execution of JMS message listener failed, and no ErrorHandler has been set.
+
+org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method could not be invoked with incoming message
+Endpoint handler details:
+Method [public void com.in.controller.OrderListener.receiveOrder(com.in.model.Order)]
+Bean [com.in.controller.OrderListener@f0e17dd]
+
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:114) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:819) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:776) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:754) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:333) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:270) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1420) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287) ~[spring-jms-6.2.7.jar:6.2.7]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: org.springframework.messaging.converter.MessageConversionException: Cannot convert from [java.lang.String] to [com.in.model.Order] for LazyResolutionMessage [payload=laptop]
+	at org.springframework.messaging.handler.annotation.support.PayloadMethodArgumentResolver.resolveArgument(PayloadMethodArgumentResolver.java:151) ~[spring-messaging-6.2.7.jar:6.2.7]
+	at org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:118) ~[spring-messaging-6.2.7.jar:6.2.7]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:147) ~[spring-messaging-6.2.7.jar:6.2.7]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:115) ~[spring-messaging-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110) ~[spring-jms-6.2.7.jar:6.2.7]
+	... 10 common frames omitted
+
+2025-06-23T12:59:15.096+05:30  WARN 8496 --- [payment-service] [org.springframework.jms.JmsListenerEndpointContainer#0-1] [68590245233b44e8e4cf7d7038c2843d-8f9f4d937fab3001] o.s.j.l.DefaultMessageListenerContainer  : Execution of JMS message listener failed, and no ErrorHandler has been set.
+
+org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method could not be invoked with incoming message
+Endpoint handler details:
+Method [public void com.in.controller.OrderListener.receiveOrder(com.in.model.Order)]
+Bean [com.in.controller.OrderListener@f0e17dd]
+
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:114) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:819) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:776) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:754) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:333) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:270) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1420) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287) ~[spring-jms-6.2.7.jar:6.2.7]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: org.springframework.messaging.converter.MessageConversionException: Cannot convert from [java.lang.String] to [com.in.model.Order] for LazyResolutionMessage [payload=laptop]
+	at org.springframework.messaging.handler.annotation.support.PayloadMethodArgumentResolver.resolveArgument(PayloadMethodArgumentResolver.java:151) ~[spring-messaging-6.2.7.jar:6.2.7]
+	at org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:118) ~[spring-messaging-6.2.7.jar:6.2.7]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:147) ~[spring-messaging-6.2.7.jar:6.2.7]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:115) ~[spring-messaging-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110) ~[spring-jms-6.2.7.jar:6.2.7]
+	... 10 common frames omitted
+
+2025-06-23T12:59:16.107+05:30  WARN 8496 --- [payment-service] [org.springframework.jms.JmsListenerEndpointContainer#0-1] [68590245233b44e8e4cf7d7038c2843d-c8b62f2f39810c44] o.s.j.l.DefaultMessageListenerContainer  : Execution of JMS message listener failed, and no ErrorHandler has been set.
+
+org.springframework.jms.listener.adapter.ListenerExecutionFailedException: Listener method could not be invoked with incoming message
+Endpoint handler details:
+Method [public void com.in.controller.OrderListener.receiveOrder(com.in.model.Order)]
+Bean [com.in.controller.OrderListener@f0e17dd]
+
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:114) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:84) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:819) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:776) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:754) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:333) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:270) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1420) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1410) ~[spring-jms-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1287) ~[spring-jms-6.2.7.jar:6.2.7]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: org.springframework.messaging.converter.MessageConversionException: Cannot convert from [java.lang.String] to [com.in.model.Order] for LazyResolutionMessage [payload=laptop]
+	at org.springframework.messaging.handler.annotation.support.PayloadMethodArgumentResolver.resolveArgument(PayloadMethodArgumentResolver.java:151) ~[spring-messaging-6.2.7.jar:6.2.7]
+	at org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:118) ~[spring-messaging-6.2.7.jar:6.2.7]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:147) ~[spring-messaging-6.2.7.jar:6.2.7]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:115) ~[spring-messaging-6.2.7.jar:6.2.7]
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:110) ~[spring-jms-6.2.7.jar:6.2.7]
+	... 10 common frames omitted
+
+2025-06-23T13:14:59.715+05:30  INFO 8496 --- [payment-service] [RMI TCP Connection(20)-127.0.0.1] [                                                 ] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-06-23T13:14:59.773+05:30  INFO 8496 --- [payment-service] [RMI TCP Connection(20)-127.0.0.1] [                                                 ] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-23T13:15:00.033+05:30  INFO 8496 --- [payment-service] [tomcat-shutdown] [                                                 ] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-23T14:48:30.031+05:30  INFO 32656 --- [payment-service] [main] [                                                 ] com.in.PaymentApplication                : Starting PaymentApplication using Java 17.0.8.1 with PID 32656 (C:\Users\bsarala\Documents\Practice\Git_SourceCode\payment-service\target\classes started by bsarala in C:\Users\bsarala\Documents\Practice\Git_SourceCode\payment-service)
+2025-06-23T14:48:30.039+05:30  INFO 32656 --- [payment-service] [main] [                                                 ] com.in.PaymentApplication                : No active profile set, falling back to 1 default profile: "default"
+2025-06-23T14:48:32.455+05:30  INFO 32656 --- [payment-service] [main] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
+2025-06-23T14:48:32.480+05:30  INFO 32656 --- [payment-service] [main] [                                                 ] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-23T14:48:32.481+05:30  INFO 32656 --- [payment-service] [main] [                                                 ] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-23T14:48:32.626+05:30  INFO 32656 --- [payment-service] [main] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-23T14:48:32.627+05:30  INFO 32656 --- [payment-service] [main] [                                                 ] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2507 ms
+2025-06-23T14:48:34.447+05:30  INFO 32656 --- [payment-service] [main] [                                                 ] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoints beneath base path '/actuator'
+2025-06-23T14:48:34.615+05:30  INFO 32656 --- [payment-service] [main] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8083 (http) with context path '/'
+2025-06-23T14:48:34.975+05:30  INFO 32656 --- [payment-service] [main] [                                                 ] com.in.PaymentApplication                : Started PaymentApplication in 6.003 seconds (process running for 7.594)
+2025-06-23T14:48:35.707+05:30  INFO 32656 --- [payment-service] [RMI TCP Connection(3)-127.0.0.1] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-23T14:48:35.708+05:30  INFO 32656 --- [payment-service] [RMI TCP Connection(3)-127.0.0.1] [                                                 ] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-23T14:48:35.710+05:30  INFO 32656 --- [payment-service] [RMI TCP Connection(3)-127.0.0.1] [                                                 ] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-06-23T14:49:21.863+05:30  INFO 32656 --- [payment-service] [RMI TCP Connection(5)-127.0.0.1] [                                                 ] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-06-23T14:49:22.192+05:30  INFO 32656 --- [payment-service] [RMI TCP Connection(5)-127.0.0.1] [                                                 ] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-23T14:49:22.895+05:30  INFO 32656 --- [payment-service] [tomcat-shutdown] [                                                 ] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-23T14:52:55.625+05:30  INFO 14292 --- [payment-service] [main] [                                                 ] com.in.PaymentApplication                : Starting PaymentApplication using Java 17.0.8.1 with PID 14292 (C:\Users\bsarala\Documents\Practice\Git_SourceCode\payment-service\target\classes started by bsarala in C:\Users\bsarala\Documents\Practice\Git_SourceCode\payment-service)
+2025-06-23T14:52:55.631+05:30  INFO 14292 --- [payment-service] [main] [                                                 ] com.in.PaymentApplication                : No active profile set, falling back to 1 default profile: "default"
+2025-06-23T14:52:58.087+05:30  INFO 14292 --- [payment-service] [main] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
+2025-06-23T14:52:58.119+05:30  INFO 14292 --- [payment-service] [main] [                                                 ] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-23T14:52:58.121+05:30  INFO 14292 --- [payment-service] [main] [                                                 ] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-23T14:52:58.292+05:30  INFO 14292 --- [payment-service] [main] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-23T14:52:58.293+05:30  INFO 14292 --- [payment-service] [main] [                                                 ] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2570 ms
+2025-06-23T14:53:00.172+05:30  INFO 14292 --- [payment-service] [main] [                                                 ] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoints beneath base path '/actuator'
+2025-06-23T14:53:00.345+05:30  INFO 14292 --- [payment-service] [main] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8083 (http) with context path '/'
+2025-06-23T14:53:00.615+05:30  INFO 14292 --- [payment-service] [main] [                                                 ] com.in.PaymentApplication                : Started PaymentApplication in 6.042 seconds (process running for 7.683)
+2025-06-23T14:53:01.292+05:30  INFO 14292 --- [payment-service] [RMI TCP Connection(3)-127.0.0.1] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-23T14:53:01.292+05:30  INFO 14292 --- [payment-service] [RMI TCP Connection(3)-127.0.0.1] [                                                 ] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-23T14:53:01.294+05:30  INFO 14292 --- [payment-service] [RMI TCP Connection(3)-127.0.0.1] [                                                 ] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-06-23T14:56:28.526+05:30  INFO 14292 --- [payment-service] [RMI TCP Connection(8)-127.0.0.1] [                                                 ] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-06-23T14:56:28.879+05:30  INFO 14292 --- [payment-service] [RMI TCP Connection(8)-127.0.0.1] [                                                 ] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-23T14:56:29.570+05:30  INFO 14292 --- [payment-service] [tomcat-shutdown] [                                                 ] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-23T14:57:12.719+05:30  INFO 15872 --- [payment-service] [main] [                                                 ] com.in.PaymentApplication                : Starting PaymentApplication using Java 17.0.8.1 with PID 15872 (C:\Users\bsarala\Documents\Practice\Git_SourceCode\payment-service\target\classes started by bsarala in C:\Users\bsarala\Documents\Practice\Git_SourceCode\payment-service)
+2025-06-23T14:57:12.729+05:30  INFO 15872 --- [payment-service] [main] [                                                 ] com.in.PaymentApplication                : No active profile set, falling back to 1 default profile: "default"
+2025-06-23T14:57:15.030+05:30  INFO 15872 --- [payment-service] [main] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
+2025-06-23T14:57:15.056+05:30  INFO 15872 --- [payment-service] [main] [                                                 ] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-23T14:57:15.056+05:30  INFO 15872 --- [payment-service] [main] [                                                 ] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-23T14:57:15.227+05:30  INFO 15872 --- [payment-service] [main] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-23T14:57:15.229+05:30  INFO 15872 --- [payment-service] [main] [                                                 ] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2412 ms
+2025-06-23T14:57:17.011+05:30  INFO 15872 --- [payment-service] [main] [                                                 ] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoints beneath base path '/actuator'
+2025-06-23T14:57:17.159+05:30  INFO 15872 --- [payment-service] [main] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8083 (http) with context path '/'
+2025-06-23T14:57:17.417+05:30  INFO 15872 --- [payment-service] [main] [                                                 ] com.in.PaymentApplication                : Started PaymentApplication in 5.721 seconds (process running for 7.35)
+2025-06-23T14:57:18.147+05:30  INFO 15872 --- [payment-service] [RMI TCP Connection(3)-127.0.0.1] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-23T14:57:18.149+05:30  INFO 15872 --- [payment-service] [RMI TCP Connection(3)-127.0.0.1] [                                                 ] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-23T14:57:18.151+05:30  INFO 15872 --- [payment-service] [RMI TCP Connection(3)-127.0.0.1] [                                                 ] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
